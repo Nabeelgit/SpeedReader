@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed reader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="text_cont">
+            <h1 class="text"></h1>
+        </div>
+        <div id="start_view">
+            <h1 style="text-align: center">Speed Reader</h1>
+            <form class="inp-form">
+                <div style="display: flex; flex-direction: column">
+                    <textarea placeholder="Enter text..." cols="60" rows="10" style="font-size: 1.5rem; margin-bottom: 1rem" id="text_inp"></textarea>
+                    <label style="margin-bottom: 0.5rem"><strong>Number of seconds between each word: </strong></label>
+                    <input placeholder="Enter..." style="font-size: 1.5rem; margin-bottom: 1rem" type="text" id="speed_inp">
+                </div>
+                <button id="start-btn" class="blue-btn">Start</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
