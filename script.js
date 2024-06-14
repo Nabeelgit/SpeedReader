@@ -1,14 +1,16 @@
 const form = document.querySelector('.inp-form');
 const text_inp = document.getElementById('text_inp');
-const speed_inp = document.getElementById('speed_inp')
-const text = document.querySelector('.text')
+const speed_inp = document.getElementById('speed_inp');
+const text = document.querySelector('.text');
 const start_view = document.getElementById('start_view');
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
     if(text_inp.value !== '' && speed_inp.value !== ''){
-        if(isNaN(speed_inp.value)){
-            alert('Speed has to be an integer!')
+        // Ensure the input is a number and greater than 0
+        let interval = parseFloat(speed_inp.value);
+        if(isNaN(interval) || interval <= 0){
+            alert('Please enter a positive number for the seconds!');
             return false;
         }
         let text_arr = text_inp.value.split(' ');    
@@ -24,6 +26,6 @@ form.addEventListener('submit', function(e){
                 clearInterval(int);
             }
             i++;
-        }, parseInt(speed_inp.value) * 1000)
+        }, interval * 1000)  // Using the interval as a float
     }
-})
+});
